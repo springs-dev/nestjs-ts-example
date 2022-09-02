@@ -20,7 +20,8 @@
     "migration:generate": "yarn run typeorm migration:generate",
     "migration:create": "yarn run typeorm migration:create",
     "migration:run": "npm run typeorm migration:run",
-    "migration:revert": "yarn run typeorm migration:revert"
+    "migration:revert": "yarn run typeorm migration:revert",
+    "test": "jest --runInBand --verbose --forceExit"
   },
   "dependencies": {
     "@nestjs/bull": "^0.1.2",
@@ -35,10 +36,13 @@
     "@nestjs/swagger": "^4.5.9",
     "@nestjs/typeorm": "^7.1.5",
     "@turf/turf": "^5.1.6",
+    "@types/jest": "25.1.4",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.12.2",
     "eslint-plugin-prettier": "^3.1.4",
     "fastify-swagger": "^2.6.0",
+    "jest": "^25.1.0",
+    "jest-junit": "^12.2.0",
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.33",
@@ -54,6 +58,7 @@
   "devDependencies": {
     "@nestjs/cli": "^7.0.0",
     "@nestjs/schematics": "^7.0.0",
+    "@nestjs/testing": "^9.0.11",
     "@types/bull": "^3.14.0",
     "@types/express": "^4.17.3",
     "@types/lodash": "^4.14.157",
@@ -70,9 +75,34 @@
     "eslint-plugin-import": "^2.20.1",
     "prettier": "^1.19.1",
     "socket.io-client": "^2.3.1",
+    "ts-jest": "25.2.1",
     "ts-loader": "^6.2.1",
     "ts-node": "^8.6.2",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^3.7.4"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "./",
+    "testEnvironment": "node",
+    "testRegex": ".spec.ts$",
+    "coverageDirectory": "./coverage",
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/test/helpers"
+    ],
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "roots": [
+      "<rootDir>/test"
+    ],
+    "moduleNameMapper": {
+      "^src/(.*)$": "<rootDir>/src/$1"
+    }
   }
 }

@@ -6,7 +6,7 @@ import { CustomersService } from './services/customers.service';
 import { AuthModule } from '../auth/auth.module';
 import { CustomerEntity } from './entities/customer.entity';
 import { CustomersSelfController } from './controllers/customers-self.controller';
-import { CustomersAuthController } from './controllers/retailers-auth.controller';
+import { CustomersAuthController } from './controllers/customers-auth.controller';
 import { JwtCustomersStrategy } from './strategies/jwt-customer.strategy';
 import { LocalCustomersStrategy } from './strategies/local-customer.strategy';
 

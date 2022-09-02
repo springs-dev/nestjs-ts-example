@@ -1,0 +1,24 @@
+{
+  "valid": {
+    "loginPayload": {
+      "email": "customer@test.com",
+      "password": "qwerty"
+    },
+    "signupPayload": {
+      "email": "new.customer@test.com",
+      "password": "qwerty",
+      "passwordConfirmation": "qwerty"
+    }
+  },
+  "invalid": {
+    "loginPayload": {
+      "email": "customer1@test.com",
+      "password": "1111"
+    },
+    "signupPayload": {
+      "email": "new.customer@test.com",
+      "password": "qwerty",
+      "passwordConfirmation": ""
+    }
+  }
+}
